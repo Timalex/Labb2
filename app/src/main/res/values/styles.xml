@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo">
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ImportantText">
+        <item name="android:textStyle">italic</item>
+
+    </style>
+
+
+</resources>

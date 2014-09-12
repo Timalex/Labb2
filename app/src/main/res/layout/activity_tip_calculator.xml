@@ -1,0 +1,255 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".TipCalculatorActivity"
+    android:focusable="false"
+    android:id="@+id/relative_layout">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextBill"
+        android:autoText="false"
+        android:layout_below="@+id/header"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/header"
+        android:layout_alignStart="@+id/header" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduction_friendly"
+        android:id="@+id/checkBoxFriendly"
+        android:checked="false"
+        android:layout_below="@+id/headerIntroduction"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onCheckBoxClicked" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduction_special"
+        android:id="@+id/checkBoxSpecials"
+        android:checked="false"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/checkBoxFriendly"
+        android:layout_alignParentLeft="true"
+        android:onClick="onCheckBoxClicked" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduction_opinion"
+        android:id="@+id/checkBoxRecommends"
+        android:checked="false"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/checkBoxSpecials"
+        android:layout_alignParentLeft="true"
+        android:onClick="onCheckBoxClicked" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerSkill"
+        android:layout_toEndOf="@+id/checkBoxRecommends"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/headerSkill"
+        android:layout_toLeftOf="@+id/radioGroupAvailability"
+        android:layout_toStartOf="@+id/radioGroupAvailability" />
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerCountry"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@+id/header"
+        android:layout_toStartOf="@+id/header" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroupAvailability"
+        android:layout_below="@+id/headerAvailability"
+        android:layout_toRightOf="@+id/headerIntroduction"
+        android:layout_toEndOf="@+id/headerIntroduction"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skill_bad"
+            android:id="@+id/radioButtonBad"
+            android:checked="false"
+            android:layout_alignBaseline="@+id/radioButtonOk"
+            android:layout_alignBottom="@+id/radioButtonOk"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skill_ok"
+            android:id="@+id/radioButtonOk"
+            android:layout_toEndOf="@+id/checkBoxRecommends"
+            android:checked="false"
+            android:layout_above="@+id/spinnerSkill"
+            android:layout_toRightOf="@+id/checkBoxRecommends" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skill_good"
+            android:id="@+id/radioButtonGood"
+            android:layout_alignTop="@+id/radioButtonOk"
+            android:layout_alignRight="@+id/editText2"
+            android:layout_alignEnd="@+id/editText2"
+            android:checked="false" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header_bill"
+        android:id="@+id/header"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_above="@+id/spinnerSkill"
+        android:layout_toEndOf="@+id/spinnerSkill"
+        android:layout_alignLeft="@+id/headerAvailability"
+        android:layout_alignStart="@+id/headerAvailability"
+        android:layout_toRightOf="@+id/headerSkill" />
+
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header_introduction"
+        android:id="@+id/headerIntroduction"
+        android:layout_alignRight="@+id/checkBoxRecommends"
+        android:layout_alignEnd="@+id/checkBoxRecommends"
+        android:layout_below="@+id/spinnerCountry" />
+
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header_availability"
+        android:id="@+id/headerAvailability"
+        android:layout_toEndOf="@+id/headerIntroduction"
+        android:layout_above="@+id/checkBoxFriendly"
+        android:layout_alignLeft="@+id/radioGroupAvailability"
+        android:layout_alignStart="@+id/radioGroupAvailability"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header_skill"
+        android:id="@+id/headerSkill"
+        android:layout_toEndOf="@+id/checkBoxRecommends"
+        android:layout_toStartOf="@+id/headerAvailability"
+        android:layout_below="@+id/checkBoxRecommends"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/headerIntroduction"
+        android:layout_alignEnd="@+id/checkBoxRecommends" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="+12.34%"
+        android:id="@+id/tipAmount"
+        android:layout_below="@+id/editTextBill"
+        android:layout_alignRight="@+id/editTextBill"
+        android:layout_alignEnd="@+id/editTextBill" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/label_tipping"
+        android:id="@+id/textView12"
+        android:layout_below="@+id/tipAmount"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal"
+        android:labelFor="@+id/seekBarTipSlider" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarTipSlider"
+        android:clickable="false"
+        android:layout_toEndOf="@+id/editTextBill"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/label_to_pay"
+        android:id="@+id/textView"
+        android:layout_toStartOf="@+id/headerAvailability"
+        android:layout_below="@+id/seekBarTipSlider"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/checkBoxSpecials"
+        android:layout_toLeftOf="@+id/textViewToPay"
+        android:gravity="right" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="false"
+        style="@style/ImportantText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/typicalTip"
+        android:id="@+id/textViewNormalTip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/spinnerCountry"
+        android:layout_toEndOf="@+id/headerIntroduction"
+        android:layout_toRightOf="@+id/headerIntroduction"
+        android:gravity="center_vertical|center_horizontal"
+        style="@style/ImportantText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="1234.56"
+        android:id="@+id/textViewToPay"
+        android:layout_toEndOf="@+id/spinnerCountry"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignRight="@+id/seekBarTipSlider"
+        android:layout_alignEnd="@+id/seekBarTipSlider"
+        android:layout_marginLeft="5dp" />
+
+</RelativeLayout>

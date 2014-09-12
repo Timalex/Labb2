@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/action_timer_start"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_play"
+        android:title="@string/action_timer_start"/>
+    <item android:id="@+id/action_timer_pause"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_pause"
+        android:title="@string/action_timer_pause" />
+    <item android:id="@+id/action_timer_reset"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_stop"
+        android:title="@string/action_timer_reset" />
+</menu>

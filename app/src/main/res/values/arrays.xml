@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="skill_ratings">
+        <item>@string/skill_bad</item>
+        <item>@string/skill_ok</item>
+        <item>@string/skill_good</item>
+    </string-array>
+    <string-array name="countries">
+        <item>Island</item>
+        <item>Schweiz</item>
+        <item>Grekland</item>
+        <item>USA</item>
+    </string-array>
+</resources>

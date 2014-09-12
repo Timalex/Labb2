@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Waiter Rater</string>
+
+    <!-- Actions -->
+    <string name="action_timer_start">Starta</string>
+    <string name="action_timer_pause">Pausa</string>
+    <string name="action_timer_reset">Nollställ</string>
+
+    <!-- Skill rating -->
+    <string name="skill_bad">Dålig</string>
+    <string name="skill_ok">Okej</string>
+    <string name="skill_good">Bra</string>
+
+    <!-- Waiter introduction -->
+    <string name="introduction_friendly">Vänlig</string>
+    <string name="introduction_special">Husets special</string>
+    <string name="introduction_opinion">Rekommenderar</string>
+
+     <!-- Headers -->
+    <string name="header_bill">Notan</string>
+    <string name="header_introduction">Introduktion</string>
+    <string name="header_availability">Tillgänglighet</string>
+    <string name="header_skill">Problemlösning</string>
+
+    <!-- Timer messages -->
+    <string name="timer_slow_service">Långsam service</string>
+    <string name="timer_fast_service">Snabb service!</string>
+    <string name="timer_start_measuring">Mät servicetiden</string>
+
+    <string name="label_tipping">Justera dricks</string>
+
+    <string name="forGoodService">för god service</string>
+    <string name="label_to_pay">Att Betala</string>
+    <string name="typicalTip">X - Y% för bra service</string>
+</resources>
