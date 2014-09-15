@@ -169,7 +169,8 @@ public class TipCalculatorActivity extends Activity implements AdapterView.OnIte
     // Mainly reflects value changes into the user interface
     private void showResult(double tipAmount)
     {
-        tipPercentage = tipAmount;
+        // Decrease precision to match the rounding discrepancy from the seekbar
+        tipPercentage = Math.floor(tipAmount * 100.0) / 100.0;
         setSliderPercent(tipAmount);
         printTip(tipAmount);
         printFinalBill();
