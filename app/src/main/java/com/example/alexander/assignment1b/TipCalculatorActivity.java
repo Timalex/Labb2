@@ -55,7 +55,8 @@ public class TipCalculatorActivity extends Activity implements AdapterView.OnIte
     private int scoreRecommends = 0;
     private int scoreAvailability = 0;
     private int scoreProblemSolving = 0;
-    private int scoreSpeed = 0;
+    // Assume good service speed if unmeasured
+    private int scoreSpeed = 1;
 
     // Number of areas that are counted towards score total
     private static final int countScoreAreas = 6;
@@ -135,21 +136,22 @@ public class TipCalculatorActivity extends Activity implements AdapterView.OnIte
         {
             // Start the timer from 0 in case the action button is pressed
             case R.id.action_timer_start:
+                secondsWaited = 0;
                 waiterTimer.setBase(SystemClock.elapsedRealtime());
                 waiterTimer.start();
                 return true;
             // Stop the time and deliver a judgement of the service speed
             case R.id.action_timer_pause:
                 waiterTimer.stop();
-                if (secondsWaited < 30)
-                {
-                    scoreSpeed = 1;
-                    waiterTimer.setText(R.string.timer_fast_service);
-                }
-                else
+                if (secondsWaited > 30)
                 {
                     scoreSpeed = 0;
                     waiterTimer.setText(R.string.timer_slow_service);
+                }
+                else
+                {
+                    scoreSpeed = 1;
+                    waiterTimer.setText(R.string.timer_fast_service);
                 }
                 // Method present in most listeners to show updated values in the user interface
                 showResult(getTipFromScore());
